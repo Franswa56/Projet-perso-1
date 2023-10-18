@@ -190,6 +190,13 @@ article p {
   width: 100%;
 }
 
+.ball {
+  width: 13.5%;
+  transform: rotatez(15deg);
+  margin-left: 3%;
+
+}
+
 .pokemon-team article {
   width: 16.5%;
 }
@@ -298,8 +305,13 @@ main {
   flex-direction: column;
 }
 
+.ball {
+  width: 80%;
+}
+
 .pokemon-team article {
   width: 100%;
+  text-align: center;
 }
 
 

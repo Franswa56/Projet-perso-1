@@ -6,6 +6,7 @@
     <title>Oh my food</title>
     <link rel="stylesheet" href="style.css" />
     <script src="script.js" defer></script>
+    <script src="team.js" defer></script>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
@@ -19,13 +20,45 @@
       <h1 class="header__title">Pokémon</h1>
     </header>
     <main>
-      <div class="gallery-container">
-        <i class="fa-regular fa-star star"></i>
-        <i class="fa-solid fa-star full-star"></i>
-        <i class="fa-regular fa-circle-left arrow" id="left-arrow"></i>
-        <div class="gallery">
-
-
+      <section class="shiny-and-team">
+        <div class="gallery-container">
+          <i class="fa-regular fa-star star"></i>
+          <i class="fa-solid fa-star full-star"></i>
+          <div class="change-gallery">
+            <div class="gallery">
+              <!--Injection des éléments en javascript-->
+            </div>
+            <div class="arrows">
+              <i class="fa-regular fa-circle-left arrow" id="left-arrow"></i>
+              <i class="fa-regular fa-circle-right arrow" id="right-arrow"></i>
+            </div>
+          </div>
         </div>
-        <i class="fa-regular fa-circle-right arrow" id="right-arrow"></i>
-      </div>
+        <div class="random-team">
+          <div class="buttons">
+            <img src="assets/normal.png" class="type-button" id="Normal" alt="normal" />
+            <img src="assets/acier.png" class="type-button" id="Acier" alt="acier" />
+            <img src="assets/combat.png" class="type-button" id="Combat" alt="combat" />
+            <img src="assets/dragon.png" class="type-button" id="Dragon" alt="dragon" />
+            <img src="assets/eau.png" class="type-button" id="Eau" alt="eau" />
+            <img src="assets/electrik.png" class="type-button" id="Électrik" alt="electrik" />
+            <img src="assets/fee.png" class="type-button" id="Fée" alt="fee" />
+            <img src="assets/feu.png" class="type-button" id="Feu" alt="feu" />
+            <img src="assets/glace.png" class="type-button" id="Glace" alt="glace" />
+            <img src="assets/insecte.png" class="type-button" id="Insecte" alt="insecte" />
+            <img src="assets/plante.png" class="type-button" id="Plante" alt="plante" />
+            <img src="assets/poison.png" class="type-button" id="Poison" alt="poison" />
+            <img src="assets/psy.png" class="type-button" id="Psy" alt="psy" />
+            <img src="assets/sol.png" class="type-button" id="Sol" alt="sol" />
+            <img src="assets/roche.png" class="type-button" id="Roche" alt="roche" />
+            <img src="assets/spectre.png" class="type-button" id="Spectre" alt="spectre" />
+            <img src="assets/tenebres.png" class="type-button" id="Ténèbres" alt="tenebres" />
+            <img src="assets/vol.png" class="type-button" id="Vol" alt="vol" />
+          </div>
+          <button class="generator">créer mon équpipe !</button>
+          <div class="pokemon-team"></div>
+        </div>
+      </section>
+    </main>
+  </body>
+</html>

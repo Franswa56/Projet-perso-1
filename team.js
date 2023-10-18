@@ -7,13 +7,21 @@ function displayTeam(element) {
     const image = document.createElement("img");
     image.src = element.sprites.regular;
     image.alt = element.name.fr;
+
+    //créer le lien pour la fiche pokédex 
+
+    pokemonId = element.pokedexId;
+    console.log(pokemonId)
+    const lien = document.createElement("a");
+    lien.href = `details.html?id=${pokemonId}`
        
     // Crée un nouvel élément "p" pour le titre
     const title = document.createElement("p");
     title.innerText = element.name.fr;
        
     // Ajoute l'image et le titre à l'élément "article"
-    article.appendChild(image);
+    article.appendChild(lien);
+    lien.appendChild(image)
     article.appendChild(title);
 
     // Ajoute l'article a la gallery (team)

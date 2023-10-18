@@ -1,5 +1,6 @@
 function displayElements(elements, i) {
     const gallery = document.querySelector(".gallery");
+    const arrowsDisplay = document.querySelector(".arrows");
     gallery.innerHTML = "";
     
     // Obtenez le premier Pokémon
@@ -7,19 +8,39 @@ function displayElements(elements, i) {
  
     // Crée un nouvel élément "article"
     const article = document.createElement("article");
+    const loader = document.createElement("div");
+    loader.className = "loader";
+
+    
        
     // Crée un nouvel élément "img" pour la photo
-    const image = document.createElement("img");
+    const image = new Image();
     image.src = element.sprites.regular;
     image.alt = element.name.fr;
-       
+
+    arrowsDisplay.style.visibility = "hidden";
+    image.style.visibility = "hidden";
+
     // Crée un nouvel élément "p" pour le titre
     const title = document.createElement("p");
     title.innerText = element.name.fr;
+
+    article.appendChild(loader)
+
+    image.onload = function() {
+        article.removeChild(loader);
+        image.style.visibility = "visible";
+        arrowsDisplay.style.visibility = "visible";
+        article.appendChild(image)
+        article.appendChild(title);
+
+    }
        
     // Ajoute l'image et le titre à l'élément "article"
     article.appendChild(image);
-    article.appendChild(title);
+
+   
+    
  
     // Ajoute l'élément "article" à la div "gallery"
     gallery.appendChild(article);

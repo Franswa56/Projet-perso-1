@@ -55,68 +55,24 @@ main {
     padding-left: 10px;
   }
 
-  .shiny-and-team {
-    display: flex;
-    gap: 150px;
+.shiny-and-team {
+  display: flex;
+  gap: 150px;
   }
 
-  .loader {
-    margin-top: 60px;
-    width: 200px;
-    height: 200px;
-    border-radius: 50%;
-    background: white;
-    position: relative;
-    box-shadow: -20px 0 rgba(0, 0, 0, 0.1) inset;
-    animation: roll 1s ease-in-out infinite;
-    background: linear-gradient(
-      to bottom,
-      #e83e35 0%,
-      #e83e35 50.5%,
-      #ffffff 50.51%,
-      #ffffff 100%
-    );
-  }
-  
-  .loader:after {
-    content: "";
-    position: absolute;
-    top: calc(100px - 3px);
-    left: 0;
-    width: 200px;
-    height: 6px;
-    background: #3f3f3f;
-  }
-  
-  .loader:before {
-    content: "";
-    position: absolute;
-    top: 67px;
-    left: 67px;
-    width: 54px;
-    height: 54px;
-    border: solid 6px #3f3f3f;
-    border-radius: 50%;
-    background: white;
-    z-index: 1;
-    box-shadow: 0 0 15px -2px #c62828 inset;
-    animation: button 3s ease infinite;
-  }
-  
-  @-webkit-keyframes roll {
-    from {
-      transform: rotate(0);
+@keyframes spin {
+  0% {
+        transform: rotate(0deg);
     }
-    90%,
-    to {
-      transform: rotate(720deg);
+  100% {
+        transform: rotate(360deg);
     }
-  }
-  
+}
 
-
-  
-
+.loader {
+    animation: spin 0.3s linear infinite; /* Cette ligne applique l'animation à votre image. */
+    width: 100%;  /* Ajustez la taille de l'image selon vos besoins */
+}
 .gallery {
     display: flex;
     justify-content: center;
@@ -151,7 +107,6 @@ main {
     display: flex;
     justify-content: center;
     width: 30%;
-    height: 600px;
 
 }
 
@@ -190,6 +145,41 @@ article p {
     font-size: 36px;
     margin-bottom: 15px;
     margin-top: 15px;
+}
+
+/* Barre de recherche */
+
+.search-form {
+  margin-top: 45px;
+  display: flex;
+  align-items: center;
+}
+
+.search-input {
+  width: 80%;
+  height: 49px;
+  padding: 0px 0px 0px 15px;
+  border-radius: 25px 0px 0px 25px;
+  border-top: 3px solid #212121;
+  border-right: 0px solid #212121;
+  border-bottom: 3px solid #212121;
+  border-left: 3px solid #212121;
+  outline: none;
+  font-size: 18px;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+.form-button {
+  border-radius: 0px 25px 25px 0px;
+  padding: 14px 25px 14px 25px;
+  border-top: 3px solid #212121;
+  border-right: 3px solid #212121;
+  border-bottom: 3px solid #212121;
+  border-left: 0px solid #212121;
+}
+
+.form-button::before {
+  border-radius: 0px;
 }
 
 /* Random team */

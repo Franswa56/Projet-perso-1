@@ -8,6 +8,8 @@ function displayElements(elements, i) {
  
     // Crée un nouvel élément "article"
     const article = document.createElement("article");
+    const lien = document.createElement("a");
+    lien.href = `details.html?id=${element.pokedexId}`;
     const loader = document.createElement("img");
     loader.className = "loader";
     loader.src = "assets/loader.png"
@@ -30,7 +32,8 @@ function displayElements(elements, i) {
         article.removeChild(loader);
         image.style.visibility = "visible";
         arrowsDisplay.style.visibility = "visible";
-        article.appendChild(image)
+        article.appendChild(lien);
+        lien.appendChild(image)
         article.appendChild(title);
 
     }      
@@ -51,8 +54,11 @@ function displayShinyElements(elements, i) {
  
     // Crée un nouvel élément "article"
     const article = document.createElement("article");
-    const loader = document.createElement("div");
+    const lien = document.createElement("a");
+    lien.href = `details.html?id=${element.pokedexId}`;
+    const loader = document.createElement("img");
     loader.className = "loader";
+    loader.src = "assets/loader.png"
       
     // Crée un nouvel élément "img" pour la photo
     const image = new Image();
@@ -72,7 +78,8 @@ function displayShinyElements(elements, i) {
         article.removeChild(loader);
         image.style.visibility = "visible";
         arrowsDisplay.style.visibility = "visible";
-        article.appendChild(image)
+        article.appendChild(lien);
+        lien.appendChild(image)
         article.appendChild(title);
 
     }      

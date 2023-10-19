@@ -1,0 +1,58 @@
+body {
+    background-color: #c1121f;
+    margin: 0px;
+    padding: 0px;
+}
+
+main {
+  padding: 50px;
+}
+
+.header-container {
+    position: relative;
+    z-index: 1;
+    width: 100vw;
+    border-radius: 0px;
+    background: linear-gradient(145deg, #cf1321, #ae101c);
+    box-shadow:  5px 5px 12px #780b13,
+             -5px -5px 12px #ff192b;
+    display: flex;
+    justify-content: center;
+  }
+.header-title {
+    font-family: "Shrikhand", sans-serif;
+    font-size: 46px;
+  }
+
+.fiche-container {
+    background-color: antiquewhite;
+    padding: 15px;
+    width: 45%;
+    display: flex;
+}
+
+.image-fiche {
+    background-color: red;
+    width: 35%;
+    border-radius: 50%;
+
+}
+
+.name {
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-weight: 600;
+    font-size: 28px;
+    margin-left: 35px;
+    margin-bottom: 15px;
+    margin-top: 25px;
+}
+
+.name-container img {
+    width: 6%;
+    margin-left: 20px;
+}
+
+.name-container p {
+    display: flex;
+    align-items: center;
+}

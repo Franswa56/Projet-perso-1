@@ -1,11 +1,38 @@
-function displaySprite(element) {
-    const spriteContainer = document.querySelector(".sprite");
+function displaySpriteAndName(element) {
+    const spriteContainer = document.querySelector(".fiche-container");
+    const nameContainer = document.querySelector(".name-container");
     const sprite = document.createElement("img");
+    const nameFr = document.createElement("p");
+    const nameEn = document.createElement("p");
+    const nameJp = document.createElement("p");
+    const title = document.createElement("h1")
+
 
     sprite.src = element.sprites.regular;
+    sprite.className = "image-fiche"
+    title.innerHTML = `Fiche de ${element.name.fr}`
+    nameFr.innerHTML = `${element.name.fr} <img src="assets/fr.png" />`;
+    nameFr.className = "name"
+    nameEn.innerHTML = `${element.name.en} <img src="assets/en.png" />`;
+    nameEn.className = "name"
+    nameJp.innerHTML = `${element.name.jp} <img src="assets/jp.png" />`;
+    nameJp.className = "name"
 
+    nameContainer.appendChild(nameFr);
+    nameContainer.appendChild(nameEn);
+    nameContainer.appendChild(nameJp);
     spriteContainer.appendChild(sprite);
 }
+
+function displayTitle(element) {
+    const title = document.createElement("h1");
+    const header = document.querySelector(".header-container");
+
+    title.innerHTML = `Fiche de ${element.name.fr}`;
+    title.className = "header-title"
+    header.appendChild(title);
+}
+
 
 
 
@@ -29,7 +56,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
     .then(data => {
         console.log(data)
-        displaySprite(data)
+        displayTitle(data)
+        displaySpriteAndName(data)
     })
 })
 })

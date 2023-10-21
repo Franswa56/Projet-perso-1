@@ -1,3 +1,19 @@
+@keyframes card-slide {
+    0% {
+        opacity: 0;
+        transform: translateY(-10%)
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0%)
+    }
+}
+
+
+
+
+
+
 body {
     background-color: #c1121f;
     margin: 0px;
@@ -26,14 +42,18 @@ main {
 
 .fiche-container {
     background-color: antiquewhite;
-    padding: 15px;
+    padding: 20px;
     width: 45%;
     display: flex;
+    animation: card-slide 1200ms forwards;
+    -webkit-box-shadow: 0px 6px 12px 6px rgba(0,0,0,0.59); 
+    box-shadow: 0px 6px 12px 6px rgba(0,0,0,0.59);
 }
 
 .image-fiche {
     background-color: red;
     width: 35%;
+    height: 35%;
     border-radius: 50%;
 
 }
@@ -44,7 +64,13 @@ main {
     font-size: 28px;
     margin-left: 35px;
     margin-bottom: 15px;
-    margin-top: 25px;
+    margin-top: 15px;
+}
+
+.description {
+    margin-left: 160px;
+    margin-top: 40px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
 
 .name-container img {
@@ -55,4 +81,42 @@ main {
 .name-container p {
     display: flex;
     align-items: center;
+}
+
+.description {
+    font-size: 32px;
+}
+
+@media (max-width: 700px) {
+   
+.fiche-container {
+    width: 90%;
+    flex-direction: column-reverse;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    }
+.name-container {
+    display: flex;
+    flex-direction: column;
+    text-align: center;   
+}
+
+.fiche-container {
+    width: 90%;
+}
+
+.name-container p {
+    display: block;
+}
+
+.image-fiche {
+    width: 70%;
+    height: 70%;
+
+}
+.description {
+    margin-left: 0px;
+    margin-top: 25px;
+}
 }

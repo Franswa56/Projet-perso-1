@@ -130,6 +130,11 @@ article p {
     margin-top: 15px;
 }
 
+.loader {
+  margin-top: 12.5%;
+
+}
+
 /* Barre de recherche */
 
 .search-form {
@@ -217,7 +222,9 @@ article p {
 
 .pokemon-team {
   display: flex;
-  width: 100%;
+  flex-wrap: wrap;
+  width: 50%;
+  justify-content: space-between;
 }
 
 .ball {

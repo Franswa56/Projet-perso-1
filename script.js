@@ -1,6 +1,6 @@
 function displayElements(elements, i) {
     const gallery = document.querySelector(".gallery");
-    const arrowsDisplay = document.querySelector(".arrows");
+    //const arrowsDisplay = document.querySelector(".arrows");
     gallery.innerHTML = "";
     
     // Obtenez le premier Pokémon
@@ -19,7 +19,7 @@ function displayElements(elements, i) {
     image.src = element.sprites.regular;
     image.alt = element.name.fr;
 
-    arrowsDisplay.style.visibility = "hidden";
+    //arrowsDisplay.style.visibility = "hidden";
     image.style.visibility = "hidden";
 
     // Crée un nouvel élément "p" pour le titre
@@ -31,7 +31,7 @@ function displayElements(elements, i) {
     image.onload = function() {
         article.removeChild(loader);
         image.style.visibility = "visible";
-        arrowsDisplay.style.visibility = "visible";
+        //arrowsDisplay.style.visibility = "visible";
         article.appendChild(lien);
         lien.appendChild(image)
         article.appendChild(title);
@@ -103,33 +103,80 @@ fetch("https://api-pokemon-fr.vercel.app/api/v1/pokemon")
 
 let i = 1
 
-if (i === 0) {i = 28}
+// Cette fonction pourrait être utilisée pour trouver l'index d'un Pokémon spécifique dans votre tableau de données.
+function findPokemonIndex(data, pokemonId) {
+    return data.findIndex(pokemon => pokemon.pokedexId === pokemonId);
+}
+
+                           // Recherche d'un pokémon //
+
+const searchForm = document.querySelector(".search-form");
+searchForm.addEventListener("submit", (event) => {
+    event.preventDefault();
+    const pokesearch = searchForm.querySelector("[name=pokemon]").value;
+
+    fetch(`https://api-pokemon-fr.vercel.app/api/v1/pokemon/${pokesearch}`)
+        .then(response => { 
+            if (!response.ok) {
+                throw new Error('Network response was not ok');
+            }
+            return response.json();
+        })
+        .then(pokemonData => { 
+            console.log(pokemonData);
+            
+            // Affiche le Pokémon recherché
+            displaySearchedElements(pokemonData);
+            
+            // Trouve l'index du Pokémon dans le tableau de données original
+            const foundIndex = findPokemonIndex(data, pokemonData.pokedexId);  // suppose que 'data' est votre tableau original de Pokémon
+            if (foundIndex !== -1) {
+                // Met à jour 'i' pour correspondre à l'index trouvé
+                i = foundIndex;
+            }
+        })
+        .catch(error => {
+            console.error('Fetch Error: ', error);
+        });
+});
+
+if (i === 0) {i = data.length}
     
 displayElements(data, i)
 
 const rightArrow = document.getElementById("right-arrow");
 const leftArrow = document.getElementById("left-arrow");
 
-rightArrow.addEventListener("click",() => {
+rightArrow.addEventListener("click", () => {
+    i++;
 
-    i ++
-    if (fullStar.style.display === "block") {
-        displayShinyElements(data, i)
-    } else {
-    displayElements(data, i)
+    // Si 'i' dépasse la fin du tableau, revenir au début.
+    if (i >= data.length) {
+        i = 0;
     }
-})
 
-leftArrow.addEventListener("click",() => {
-    i --
+    // Afficher les éléments en fonction de l'état de l'étoile (shiny ou non).
     if (fullStar.style.display === "block") {
-        displayShinyElements(data, i)
-    } else if (i === 0){ 
-        i = 1000
+        displayShinyElements(data, i);
     } else {
-    displayElements(data, i)
+        displayElements(data, i);
     }
-})
+});
+
+leftArrow.addEventListener("click", () => {
+    i--;
+    
+    // Vérifier si 'i' est hors limites
+    if (i < 0) {
+        i = data.length - 1;  // Remarquez que nous utilisons 'data.length - 1' ici
+    }
+
+    if (fullStar.style.display === "block") {
+        displayShinyElements(data, i);
+    } else {
+        displayElements(data, i);
+    }
+});
 
 /// Transformation en shiny
 
@@ -207,6 +254,7 @@ fetch(`https://api-pokemon-fr.vercel.app/api/v1/pokemon/${pokesearch}`)
 .then(data => { 
     console.log(data);
     displaySearchedElements(data)
+    
 })
 .catch(error => {
     // La gestion des erreurs lancées se fait ici.

@@ -5,7 +5,8 @@ function displaySpriteAndName(element) {
     const nameFr = document.createElement("p");
     const nameEn = document.createElement("p");
     const nameJp = document.createElement("p");
-    const title = document.createElement("h1")
+    const description = document.createElement("h2");
+    const title = document.createElement("h1");
 
 
     sprite.src = element.sprites.regular;
@@ -17,10 +18,13 @@ function displaySpriteAndName(element) {
     nameEn.className = "name"
     nameJp.innerHTML = `${element.name.jp} <img src="assets/jp.png" />`;
     nameJp.className = "name"
+    description.innerHTML = element.category;
+    description.className = "description";
 
     nameContainer.appendChild(nameFr);
     nameContainer.appendChild(nameEn);
     nameContainer.appendChild(nameJp);
+    nameContainer.appendChild(description);
     spriteContainer.appendChild(sprite);
 }
 

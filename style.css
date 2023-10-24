@@ -145,7 +145,7 @@ article p {
 
 .search-input {
   width: 80%;
-  height: 49px;
+  height: 48px;
   padding: 0px 0px 0px 15px;
   border-radius: 25px 0px 0px 25px;
   border-top: 3px solid #212121;
@@ -223,7 +223,6 @@ article p {
 .pokemon-team {
   display: flex;
   flex-wrap: wrap;
-  width: 50%;
   justify-content: space-between;
 }
 
@@ -235,7 +234,7 @@ article p {
 }
 
 .pokemon-team article {
-  width: 16.5%;
+  width: 12.5%;
   text-align: center;
 }
 
@@ -246,6 +245,18 @@ article p {
 .pokemon-team article p {
   font-size: 16px;
   padding-left: 20px;
+}
+
+.arrow-up {
+  font-size: 68px
+}
+
+.default-title {
+  font-size: 36px;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  font-weight: 600;
+  margin-top: 35px;
+
 }
 /* Bouton pour équipe */
 
@@ -340,7 +351,7 @@ main {
 }
 
 .pokemon-team {
-  flex-direction: column;
+  flex-wrap: wrap;
 }
 
 .ball {
@@ -348,7 +359,7 @@ main {
 }
 
 .pokemon-team article {
-  width: 100%;
+  width: 20%;
   text-align: center;
 }
 

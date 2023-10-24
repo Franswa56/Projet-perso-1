@@ -59,6 +59,7 @@ function displayTeam(element) {
     image.src = element.sprites.regular;
     image.alt = element.name.fr;
 
+
     //créer le lien pour la fiche pokédex 
 
     pokemonId = element.pokedexId;

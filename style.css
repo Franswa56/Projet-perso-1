@@ -14,6 +14,7 @@ main {
     position: relative;
     z-index: 1;
     width: 100vw;
+    height: 100px;
     border-radius: 0px;
     background: linear-gradient(145deg, #cf1321, #ae101c);
     box-shadow:  5px 5px 12px #780b13,
@@ -24,18 +25,11 @@ main {
   .header__title {
     font-family: "Shrikhand", sans-serif;
     font-size: 46px;
+    margin-top: 20px;
   }
   .header__title-menu {
     font-family: "Shrikhand", sans-serif;
     font-size: 26px;
-  }
-  .header__arrow {
-    margin-top: 33px;
-    color: black;
-  }
-  .header__link {
-    padding-right: 90vw;
-    position: absolute;
   }
 
 .shiny-and-team {

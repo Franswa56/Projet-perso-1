@@ -28,6 +28,8 @@ function displaySpriteAndName(element) {
     spriteContainer.appendChild(sprite);
 }
 
+// Fonction qui affiche le titre
+
 function displayTitle(element) {
     const title = document.createElement("h1");
     const header = document.querySelector(".header-container");
@@ -35,6 +37,28 @@ function displayTitle(element) {
     title.innerHTML = `Fiche de ${element.name.fr}`;
     title.className = "header-title"
     header.appendChild(title);
+}
+
+// Fonction pour afficher les statistique en diagramme
+
+function createBarChart(data) {
+    var stats = data.stats;
+    var container = document.querySelector('.tableau-stats');
+
+    // Pour chaque statistique, nous créons une barre
+    for (var key in stats) {
+        var value = stats[key];
+        var bar = document.createElement('div');
+        bar.className = 'bar bar-' + key;
+        var percentage = value / 100;  // Ajustez cette partie en fonction de la valeur maximale possible pour vos statistiques
+        var hue = percentage * 90; // Aller de rouge (0) à vert (120) dans le modèle de couleur HSL
+        bar.style.height = value*3 + 'px'; // La hauteur est basée sur la valeur de la statistique
+        bar.style.background = 'linear-gradient(to top, red, hsl(' + hue + ', 100%, 50%))';
+        bar.innerHTML = value; // Afficher la valeur dans la barre
+        container.appendChild(bar);
+    }
+
+
 }
 
 
@@ -62,6 +86,7 @@ document.addEventListener("DOMContentLoaded", () => {
         console.log(data)
         displayTitle(data)
         displaySpriteAndName(data)
+        createBarChart(data)
     })
 })
 })

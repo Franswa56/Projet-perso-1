@@ -20,8 +20,21 @@ body {
     padding: 0px;
 }
 
+h2 {
+    font-family: "Shrikhand", sans-serif;
+    font-size: 32px;
+    margin: 10px;
+}
+
 main {
   padding: 50px;
+}
+
+section {
+    display: flex;
+    justify-content: space-between;
+    gap: 40px;
+    height: auto;
 }
 
 .header-container {
@@ -38,22 +51,24 @@ main {
 .header-title {
     font-family: "Shrikhand", sans-serif;
     font-size: 46px;
+    margin: 10px;
   }
 
 .fiche-container {
     background-color: antiquewhite;
     padding: 20px;
-    width: 45%;
+    width: 550px;
     display: flex;
+    border-radius: 25px;
     animation: card-slide 1200ms forwards;
     -webkit-box-shadow: 0px 6px 12px 6px rgba(0,0,0,0.59); 
     box-shadow: 0px 6px 12px 6px rgba(0,0,0,0.59);
 }
 
 .image-fiche {
-    background-color: red;
-    width: 35%;
-    height: 35%;
+    background-color: black;
+    width: 15vw;
+    height: 15vw;
     border-radius: 50%;
 
 }
@@ -64,17 +79,22 @@ main {
     font-size: 28px;
     margin-left: 35px;
     margin-bottom: 15px;
-    margin-top: 15px;
+    margin-top: 10px;
 }
 
 .description {
-    margin-top: 40px;
+    margin-top: 30px;
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
 
+.name-container {
+    width: 65%;
+}
+
 .name-container img {
-    width: 6%;
+    width: 20px;
     margin-left: 20px;
+    
 }
 
 .name-container p {
@@ -86,19 +106,126 @@ main {
     font-size: 32px;
 }
 
-@media (max-width: 700px) {
+/*      Les Stats    */
 
+.stats {
+    border-radius: 25px;
+    background: #cf1321;
+    box-shadow: inset 36px 36px 73px #b0101c,
+            inset -36px -36px 73px #ee1626;
+    width: 60%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.tableau-stats {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    width: 90%;
+}
+
+.stats-names {
+    display: flex;
+    width: 90%;
+    justify-content: space-between;
+
+}
+
+.stats-names p {
+    margin-left: 30px;
+}
+
+.bar {
+
+    width: 10%;
+    text-align: center;
+}
+
+.bar-hp {
+    border-radius: 5px 5px 0px 0px;
+    border: 2px solid black;
+    border-bottom: 0px;
+}
+
+.bar-atk {
+
+    border-radius: 5px 5px 0px 0px;
+    border: 2px solid black;
+    border-bottom: 0px;
+}
+
+.bar-def {
+
+    border-radius: 5px 5px 0px 0px;
+    border: 2px solid black;
+    border-bottom: 0px;
+}
+
+.bar-spe_atk {
+
+    border-radius: 5px 5px 0px 0px;
+    border: 2px solid black;
+    border-bottom: 0px;
+}
+
+.bar-spe_def {
+
+    border-radius: 5px 5px 0px 0px;
+    border: 2px solid black;
+    border-bottom: 0px;
+}
+
+.bar-vit {
+
+    border-radius: 5px 5px 0px 0px;
+    border: 2px solid black;
+    border-bottom: 0px;
+}
+
+
+@media (max-width: 700px) {
+body {
+    width: 100vw;
+}
+
+main {
+    padding: 20px;
+}
 .header-title {
     font-size: 26px;
   }
+
+section {
+    flex-direction: column;
+    width: 100%;
+}
+
+.stats {
+    width: 100%;
+}
+
+.stats-names p {
+    margin: 0px;
+    transform: rotateZ(-80deg);
+    font-size: 12px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    margin-top: 15px;
+    padding-bottom: 15px;
+}
+
+
+
    
 .fiche-container {
-    width: 90%;
+    width: 100%;
     flex-direction: column-reverse;
     justify-content: center;
     align-items: center;
     text-align: center;
     }
+
 .name-container {
     display: flex;
     flex-direction: column;
@@ -110,7 +237,7 @@ main {
 }
 
 .name-container p {
-    display: block;
+    display: flex;
 }
 
 .image-fiche {

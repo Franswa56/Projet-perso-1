@@ -315,6 +315,10 @@ section {
     width: 100%;
 }
 
+.sprite-name-container {
+    flex-direction: column-reverse;
+}
+
 .stats {
     width: 90%;
 }
@@ -386,9 +390,11 @@ section {
     display: flex;
 }
 
-.image-fiche {
-    width: 70%;
-    height: 70%;
+.fiche-container .image-fiche {
+    width: 50%;
+    height: 50%;
+    margin-right: 20px;
+    align-self: center;
 
 }
 .description {

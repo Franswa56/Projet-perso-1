@@ -1,6 +1,7 @@
 function displaySpriteAndName(element) {
     const spriteContainer = document.querySelector(".fiche-container");
     const nameContainer = document.querySelector(".name-container");
+    const spriteAndName = document.querySelector(".sprite-name-container")
     const sprite = document.createElement("img");
     const nameFr = document.createElement("p");
     const nameEn = document.createElement("p");
@@ -24,8 +25,10 @@ function displaySpriteAndName(element) {
     nameContainer.appendChild(nameFr);
     nameContainer.appendChild(nameEn);
     nameContainer.appendChild(nameJp);
-    nameContainer.appendChild(description);
-    spriteContainer.appendChild(sprite);
+    spriteAndName.appendChild(nameContainer);
+    spriteAndName.appendChild(sprite);
+    spriteContainer.appendChild(description);
+
 }
 
 // Fonction qui affiche le titre

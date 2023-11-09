@@ -241,6 +241,37 @@ article p {
   padding-left: 20px;
 }
 
+.stats-buttons {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.hp-button::before {
+  background-color: rgb(247, 56, 183);
+}
+
+.attack-button::before {
+  background-color: rgba(231, 35, 35, 0.918);
+}
+
+.defense-button::before {
+  background-color: rgb(78, 105, 227);
+}
+
+.attackspe-button::before {
+  background-color: rgba(231, 35, 35, 0.918);
+}
+
+.defensespe-button::before {
+  background-color: rgb(78, 105, 227);
+}
+
+.speed-button::before {
+  background-color: purple;
+}
+
+
 .arrow-up {
   font-size: 68px
 }

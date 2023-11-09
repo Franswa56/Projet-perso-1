@@ -1,4 +1,5 @@
 let allPokemons = [];
+let filteredPokemons = [];
 
 function fetchAllPokemon() {
     fetch("https://api-pokemon-fr.vercel.app/api/v1/pokemon")
@@ -64,8 +65,68 @@ document.addEventListener('DOMContentLoaded', () => {
             }
 
             // Nous filtrons maintenant les Pokémon après chaque clic et mettons à jour l'affichage.
-            const filteredPokemons = filterPokemonByType(allPokemons, selectedTypes);
+            filteredPokemons = filterPokemonByType(allPokemons, selectedTypes);
             createPokemonElement(filteredPokemons);
         });
     });
 });
+
+// Tri en fonctions des statistiques
+// Points de vie
+const pdvButton = document.querySelector(".hp-button");
+pdvButton.addEventListener("click", ()=> {
+    filteredPokemons.sort(function (a,b) {
+
+        return b.stats.hp - a.stats.hp
+    });
+    createPokemonElement(filteredPokemons)
+})
+
+// Attaque
+const atkButton = document.querySelector(".attack-button");
+atkButton.addEventListener("click", ()=> {
+    filteredPokemons.sort(function (a,b) {
+
+        return b.stats.atk - a.stats.atk
+    });
+    createPokemonElement(filteredPokemons)
+})
+// Défense 
+const defButton = document.querySelector(".defense-button");
+defButton.addEventListener("click", ()=> {
+    filteredPokemons.sort(function (a,b) {
+
+        return b.stats.def - a.stats.def
+    });
+    createPokemonElement(filteredPokemons)
+})
+// Attaque spéciale
+const SatkButton = document.querySelector(".attackspe-button");
+SatkButton.addEventListener("click", ()=> {
+    filteredPokemons.sort(function (a,b) {
+
+
+        return b.stats.spe_atk - a.stats.spe_atk
+    });
+    createPokemonElement(filteredPokemons)
+})
+// Défense spécial 
+const SdefButton = document.querySelector(".defensespe-button");
+SdefButton.addEventListener("click", ()=> {
+    filteredPokemons.sort(function (a,b) {
+
+
+        return b.stats.spe_def - a.stats.spe_def
+    });
+    createPokemonElement(filteredPokemons)
+})
+// Vitesse 
+const vitButton = document.querySelector(".speed-button");
+vitButton.addEventListener("click", ()=> {
+    filteredPokemons.sort(function (a,b) {
+
+
+        return b.stats.vit - a.stats.vit
+    });
+    createPokemonElement(filteredPokemons)
+})

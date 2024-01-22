@@ -77,7 +77,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const pokemonID = urlParams.get("id");
     console.log(pokemonID)
 
-    fetch(`https://api-pokemon-fr.vercel.app/api/v1/pokemon/${pokemonID}`)
+    fetch(`https://tyradex.vercel.app/api/v1/pokemon/${pokemonID}`)
 
     .then(response => {
         if (!response.ok) {

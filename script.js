@@ -92,7 +92,7 @@ function displayShinyElements(elements, i) {
 
 
 
-fetch("https://api-pokemon-fr.vercel.app/api/v1/pokemon")
+fetch("https://tyradex.vercel.app/api/v1/pokemon")
 .then(response => {
     if (!response.ok) {
         throw new Error(`HTTP error! Status: ${response.status}`);
@@ -115,7 +115,7 @@ searchForm.addEventListener("submit", (event) => {
     event.preventDefault();
     const pokesearch = searchForm.querySelector("[name=pokemon]").value;
 
-    fetch(`https://api-pokemon-fr.vercel.app/api/v1/pokemon/${pokesearch}`)
+    fetch(`https://tyradex.vercel.app/api/v1/pokemon${pokesearch}`)
         .then(response => { 
             if (!response.ok) {
                 throw new Error('Network response was not ok');
